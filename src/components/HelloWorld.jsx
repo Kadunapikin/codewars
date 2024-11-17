@@ -12,10 +12,39 @@ const HelloWorld = () => {
     function betterThanAverage(classPoints, yourPoints) {
         const total = classPoints.reduce((sum, current) => sum + current, 0);
         const classAverage = total / classPoints.length;
+
+        if (yourPoints > classAverage) {
+            return true;
+        }
+        else {
+            return false;
+        }
       
         // Return the comparison directly
-        return yourPoints > classAverage;
+        // return yourPoints > classAverage;
     }
+    console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
+
+    const scores = [10, 15, 20, 8];
+
+const totalScore = scores.reduce((acc, score) => {
+    return acc + score;
+}, 0);
+console.log(totalScore);
+
+//Another method 
+function betterThanAverage(classPoints, yourPoints) {
+    // Your code here
+    var classAvg = 0;
+    for (var i = 0; i < classPoints.length; i++){
+      classAvg += classPoints[i]; 
+    }
+    classAvg = classAvg/classPoints.length; 
+    return yourPoints > classAvg;
+  }
+  
+
+    
 
   return (
     <div>
